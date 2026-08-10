@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MCNG Changelog</title>
+
+  <link rel="icon" href="../mcng-web-images/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --bg:#060806;
+      --bg2:#0d120d;
+      --green:#39452b;
+      --green2:#566c40;
+      --text:#f5f5f5;
+      --muted:#9ba39a;
+      --border:rgba(255,255,255,0.08);
+      --card:rgba(255,255,255,0.04);
+      --glow:0 0 25px rgba(86,108,64,.35);
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Figtree',sans-serif;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top right, rgba(86,108,64,.15), transparent 25%),
+      radial-gradient(circle at bottom left, rgba(57,69,43,.15), transparent 30%);
+      z-index:-2;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size:60px 60px;
+      opacity:.12;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    h1,h2,h3{
+      font-family:'Tenor Sans',sans-serif;
+      letter-spacing:1px;
+    }
+
+    /* NAV */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:999;
+      padding:20px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.25);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .logo{
+      color:white;
+      text-decoration:none;
+      font-size:1.5rem;
+      letter-spacing:3px;
+      position:relative;
+      font-family:'Tenor Sans';
+    }
+
+    .logo::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0%;
+      height:1px;
+      background:white;
+      transition:.3s;
+    }
+
+    .logo:hover::after{
+      width:100%;
+    }
+
+    .admin-btn{
+      padding:14px 24px;
+      border:none;
+      border-radius:16px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:white;
+      cursor:pointer;
+      transition:.35s;
+      backdrop-filter:blur(12px);
+      font-family:'Figtree';
+    }
+
+    .admin-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--glow);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:60vh;
+      display:flex;
+      align-items:center;
+      padding:160px 8% 100px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(
+      to bottom,
+      rgba(0,0,0,.05) 0%,
+      rgba(0,0,0,.35) 30%,
+      rgba(0,0,0,.75) 65%,
+      #060806 100%
+      ),
+      url('https://t3.ftcdn.net/jpg/07/76/98/10/360_F_776981069_8MmYerjdNVVZNFwS47UT2aYg7SLWZSlL.jpg?q=80&w=1920&auto=format&fit=crop') center/cover;
+      opacity:.7;
+      transform:scale(1.1);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+    }
+
+    .hero-tag{
+      color:#a2af97;
+      letter-spacing:4px;
+      margin-bottom:20px;
+      font-size:.85rem;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      font-size:clamp(4rem,10vw,8rem);
+      margin-bottom:25px;
+      line-height:.95;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.8;
+      color:#c1c1c1;
+      font-size:1.05rem;
+    }
+
+    /* CHANGELOG */
+
+    .container{
+      padding:20px 8% 120px;
+    }
+
+    .changelog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:28px;
+      overflow:hidden;
+      backdrop-filter:blur(14px);
+      transition:.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:var(--glow);
+    }
+
+    .card-image{
+      height:240px;
+      overflow:hidden;
+    }
+
+    .card-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:.5s;
+    }
+
+    .card:hover .card-image img{
+      transform:scale(1.05);
+    }
+
+    .card-content{
+      padding:30px;
+    }
+
+    .date{
+      color:#8da17d;
+      letter-spacing:2px;
+      font-size:.8rem;
+      margin-bottom:15px;
+      text-transform:uppercase;
+    }
+
+    .card-content h2{
+      margin-bottom:15px;
+      font-size:1.8rem;
+    }
+
+    .card-content p{
+      color:#c1c1c1;
+      line-height:1.8;
+    }
+
+    /* MODAL */
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.75);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:5000;
+      padding:20px;
+    }
+
+    .modal-box{
+      width:100%;
+      max-width:560px;
+      background:#0b0f0b;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:35px;
+      backdrop-filter:blur(16px);
+      animation:popup .4s ease;
+    
+      max-height:85vh;
+      overflow-y:auto;
+    }
+
+    /* Custom scrollbar styling for modal */
+    .modal-box::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .modal-box::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+    }
+
+    .modal-box::-webkit-scrollbar-thumb {
+      background: rgba(86,108,64,0.6);
+      border-radius: 10px;
+    }
+
+    .modal-box::-webkit-scrollbar-thumb:hover {
+      background: rgba(86,108,64,0.8);
+    }
+
+    @keyframes popup{
+
+      from{
+        opacity:0;
+        transform:translateY(40px) scale(.95);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0px) scale(1);
+      }
+
+    }
+
+    .modal-box h2{
+      margin-bottom:25px;
+    }
+
+    .modal-box input,
+    .modal-box select,
+    .modal-box textarea{
+      width:100%;
+      margin-bottom:18px;
+      padding:15px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:white;
+      font-family:'Figtree';
+      resize:none;
+      outline:none;
+      appearance:none;
+    }
+
+    .modal-box select option{
+      background:#0c100c;
+      color:white;
+    }
+
+    .modal-box button{
+      width:100%;
+      padding:16px;
+      border:none;
+      background:var(--green);
+      color:white;
+      border-radius:14px;
+      cursor:pointer;
+      transition:.35s;
+      font-family:'Figtree';
+      font-weight:600;
+    }
+
+    .modal-box button:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--glow);
+    }
+
+    .generated-box{
+      margin-top:20px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px;
+      padding:20px;
+      max-height:300px;
+      overflow-y:auto;
+    }
+
+    /* Custom scrollbar for generated box */
+    .generated-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .generated-box::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.02);
+      border-radius: 10px;
+    }
+
+    .generated-box::-webkit-scrollbar-thumb {
+      background: rgba(86,108,64,0.5);
+      border-radius: 10px;
+    }
+
+    .generated-box::-webkit-scrollbar-thumb:hover {
+      background: rgba(86,108,64,0.7);
+    }
+
+    .generated-box pre{
+      white-space:pre-wrap;
+      line-height:1.7;
+      color:#d5d5d5;
+      overflow:visible;
+      word-wrap:break-word;
+    }
+
+    .copy-btn{
+      margin-top:15px;
+      background:#566c40 !important;
+      width:100%;
+    }
+
+    @media(max-width:800px){
+
+      .hero{
+        padding-top:180px;
+      }
+
+      .hero h1{
+        font-size:4rem;
+      }
+
+      .changelog-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+
+    <a href="../" class="logo">
+      MCNG
+    </a>
+
+    <button class="admin-btn" onclick="openPasswordModal()">
+      Admin Control
+    </button>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-tag">
+        MAPLECLIFF NATIONAL GUARD
+      </div>
+
+      <h1>
+        CHANGELOG
+      </h1>
+
+      <p>
+        View changes to the website here.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CHANGELOGS -->
+
+  <section class="container">
+
+    <div class="changelog-grid">
+
+      <!-- ADD NEW CHANGELOGS UNDER THIS -->
+
+      <div class="card">
+
+        <div class="card-content">
+
+          <div class="date">
+            MAY 20, 2026
+          </div>
+
+          <h2>
+            Website Created
+          </h2>
+
+          <p>
+            Official MCNG website launched.
+            Developed by Grandpa Joey (Mosahela) & Grg_Gamer.
+            Image credits: Oreogod / Grg / Capy / Enderman
+          </p>
+
+        </div>
+
+      </div>
+
+      
+<div class="card">
+
+  <div class="card-content">
+
+    <div class="date">
+      MAY 21, 2026
+    </div>
+
+    <h2>
+      Gallery Creation
+    </h2>
+
+    <p>
+      Gallery added to the MCNG website. Developed by Grandpa Joey (Mosahela) & Grg_Gamer.
+    </p>
+
+  </div>
+
+</div>
+
+        <div class="card">
+
+  <div class="card-content">
+
+    <div class="date">
+
+      MAY 22 2026
+
+    </div>
+
+    <h2>
+
+      404 Page Created
+
+    </h2>
+
+    <p>
+
+      Added custom 404 page. Developed by Grg_Gamer & Grandpa Joey (Mosahela)
+
+    </p>
+
+  </div>
+
+</div>
+
+         <div class="card">
+
+  <div class="card-content">
+
+    <div class="date">
+
+      MAY 30 2026
+
+    </div>
+
+    <h2>
+
+      Automatic Rank Update Added
+
+    </h2>
+
+    <p>
+
+      Created a custom bot that automatically updates rank displays every week. Developed by Grg_Gamer
+
+    </p>
+
+  </div>
+
+</div>
+
+      <div class="card">
+
+        <div class="card-content">
+
+          <div class="date">
+            JUNE 4 2026
+          </div>
+
+          <h2>
+            Interactive Backround Added
+          </h2>
+
+          <p>
+            Interactive backround added to the main site and the gallery. Suggested by Tuna (pilotakeksz). Developed by Grg_Gamer & Grandpa Joey (Mosahela)
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ADD NEW CHANGELOGS ABOVE THIS -->
+      
+    </div>
+
+  </section>
+
+  <!-- PASSWORD MODAL -->
+
+  <div class="modal" id="passwordModal">
+
+    <div class="modal-box">
+
+      <h2>
+        Admin Authentication
+      </h2>
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter Password"
+      >
+
+      <button onclick="checkPassword()">
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- GENERATOR MODAL -->
+
+  <div class="modal" id="generatorModal">
+
+    <div class="modal-box">
+
+      <h2>
+        Create Changelog
+      </h2>
+
+      <select id="cardType" onchange="toggleImageInput()">
+
+        <option value="image">
+          Changelog Card With Image
+        </option>
+
+        <option value="no-image">
+          Changelog Card Without Image
+        </option>
+
+      </select>
+
+      <input
+        type="text"
+        id="titleInput"
+        placeholder="Update Title"
+      >
+
+      <input
+        type="text"
+        id="dateInput"
+        placeholder="Date Example: MAY 20, 2026"
+      >
+
+      <textarea
+        rows="6"
+        id="messageInput"
+        placeholder="Enter changelog message"
+      ></textarea>
+
+      <input
+        type="text"
+        id="imageInput"
+        placeholder="Image File Name Example: update.png"
+      >
+
+      <button onclick="generateCode()">
+        Generate Code
+      </button>
+
+      <div class="generated-box" id="generatedBox" style="display:none;">
+
+        <pre id="generatedCode"></pre>
+
+        <button class="copy-btn" onclick="copyCode()">
+          Copy Code
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.from(".hero-content",{
+      y:100,
+      opacity:0,
+      duration:1.2
+    })
+
+    gsap.utils.toArray(".card").forEach((card)=>{
+
+      gsap.from(card,{
+        scrollTrigger:{
+          trigger:card,
+          start:"top 85%"
+        },
+        y:80,
+        opacity:0,
+        duration:1,
+        ease:"power3.out"
+      })
+
+    })
+
+    function openPasswordModal(){
+
+      document.getElementById('passwordModal').style.display = "flex"
+
+    }
+    const ADMIN_PASSWORD_HASH = "1b5373891f33d60931c0fa2db1319b61726cbc3e5377fd8e8e3308557dfd85b8"
+
+    async function hashText(text){
+      const data = new TextEncoder().encode(text)
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('')
+    }
+
+    async function checkPassword(){
+
+      const password = document.getElementById('passwordInput').value
+      const hashed = await hashText(password)
+
+      if(hashed === ADMIN_PASSWORD_HASH){
+
+        document.getElementById('passwordModal').style.display = "none"
+
+        document.getElementById('generatorModal').style.display = "flex"
+
+      }else{
+
+        alert("Incorrect Password")
+
+      }
+
+    }
+
+    function toggleImageInput(){
+
+      const type = document.getElementById('cardType').value
+      const imageInput = document.getElementById('imageInput')
+
+      if(type === "image"){
+
+        imageInput.style.display = "block"
+
+      }else{
+
+        imageInput.style.display = "none"
+
+      }
+
+    }
+
+    function generateCode(){
+
+      const type = document.getElementById('cardType').value
+
+      const title = document.getElementById('titleInput').value
+
+      const date = document.getElementById('dateInput').value
+
+      const message = document.getElementById('messageInput').value
+
+      const image = document.getElementById('imageInput').value
+
+      let code = ""
+
+      if(type === "image"){
+
+        code =
+`<div class="card">
+
+  <div class="card-image">
+
+    <img src="mcng-web-images/${image}" alt="${title}">
+
+  </div>
+
+  <div class="card-content">
+
+    <div class="date">
+      ${date}
+    </div>
+
+    <h2>
+      ${title}
+    </h2>
+
+    <p>
+      ${message}
+    </p>
+
+  </div>
+
+</div>`
+
+      }else{
+
+        code =
+`<div class="card">
+
+  <div class="card-content">
+
+    <div class="date">
+      ${date}
+    </div>
+
+    <h2>
+      ${title}
+    </h2>
+
+    <p>
+      ${message}
+    </p>
+
+  </div>
+
+</div>`
+
+      }
+
+      document.getElementById('generatedBox').style.display = "block"
+
+      document.getElementById('generatedCode').textContent =
+`STEP 1:
+Find this comment:
+
+<!-- ADD NEW CHANGELOGS UNDER THIS -->
+
+STEP 2:
+Paste the generated code directly under the comment.
+
+STEP 3:
+If using an image:
+Put the image file inside:
+
+mcng-web-images/
+
+GENERATED CODE:
+
+${code}`
+
+    }
+
+    function copyCode(){
+      const text = document.getElementById('generatedCode').textContent
+      const btn = document.querySelector('.copy-btn')
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied Code ✓'
+        setTimeout(() => { btn.textContent = 'Copy Code' }, 2500)
+      })
+    }
+
+    window.onclick = function(event){
+
+      const passwordModal = document.getElementById('passwordModal')
+
+      const generatorModal = document.getElementById('generatorModal')
+
+      if(event.target === passwordModal){
+
+        passwordModal.style.display = "none"
+
+      }
+
+      if(event.target === generatorModal){
+
+        generatorModal.style.display = "none"
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

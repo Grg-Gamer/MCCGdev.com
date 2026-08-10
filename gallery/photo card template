@@ -1,0 +1,16 @@
+ <div class="glass photo-card" onclick="openLightbox(this)">
+        <div class="photo-image">
+          <img src="../mcng-web-images/gallery6.png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+        </div>
+        <div class="photo-content">
+          <div class="photo-credit">
+            <span class="credit-label">Photo by:</span>
+            <span class="credit-name">Personnel Name</span>
+          </div>
+          <div class="credit-divider"></div>
+          <div class="photo-credit">
+            <span class="credit-label">Edited by:</span>
+            <span class="credit-name">Personnel Name</span>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MCNG | 404</title>
+  <link rel="icon" type="image/png" href="mcng-web-images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --bg:#050b14;
+      --card:rgba(255,255,255,0.05);
+      --navy:#0b3d63;
+      --navy2:#2f8fdb;
+      --text:#f5f5f5;
+      --muted:#93a8bc;
+      --border:rgba(255,255,255,0.08);
+      --glow:0 0 25px rgba(47,143,219,.35);
+      --orange:#ff5f1f;
+      --glow-accent:0 0 25px rgba(255,95,31,.45);
+    }
+
+    html, body{
+      height:100%;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Figtree',sans-serif;
+      overflow:hidden;
+    }
+
+    /* Green ambient blobs */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(86,108,64,.15), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(57,69,43,.15), transparent 30%);
+      pointer-events:none;
+      z-index:-2;
+    }
+
+    /* Tactical grid */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size:60px 60px;
+      opacity:.15;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    h1,h2,h3{
+      font-family:'Tenor Sans',sans-serif;
+      letter-spacing:1px;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:999;
+      padding:20px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.25);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo{
+      font-family:'Tenor Sans';
+      font-size:1.5rem;
+      letter-spacing:3px;
+      color:white;
+      text-decoration:none;
+      position:relative;
+    }
+
+    .logo::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0%;
+      height:1px;
+      background:white;
+      transition:.3s;
+    }
+
+    .logo:hover::after{
+      width:100%;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:#ddd;
+      text-decoration:none;
+      transition:.3s;
+      position:relative;
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0%;
+      height:1px;
+      background:var(--green2);
+      transition:.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    /* PARTICLES */
+
+    .particles{
+      position:fixed;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .particle{
+      position:absolute;
+      width:2px;
+      height:2px;
+      background:rgba(255,255,255,.4);
+      border-radius:50%;
+      animation:float 10s linear infinite;
+    }
+
+    @keyframes float{
+      from{ transform:translateY(100vh); }
+      to{ transform:translateY(-100vh); }
+    }
+
+    /* MAIN */
+
+    .page{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .content{
+      text-align:center;
+      max-width:700px;
+      padding:0 6%;
+    }
+
+    .error-tag{
+      color:#849274;
+      letter-spacing:6px;
+      font-size:.8rem;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
+
+    .error-code{
+      font-size:clamp(6rem,20vw,16rem);
+      line-height:.85;
+      font-family:'Tenor Sans',sans-serif;
+      letter-spacing:-4px;
+      color:var(--text);
+      margin-bottom:30px;
+      position:relative;
+      display:inline-block;
+    }
+
+    /* Scanline effect over the 404 number */
+    .error-code::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 3px,
+        rgba(0,0,0,.08) 3px,
+        rgba(0,0,0,.08) 4px
+      );
+      pointer-events:none;
+    }
+
+    .error-title{
+      font-size:clamp(1.2rem,3vw,2rem);
+      text-transform:uppercase;
+      letter-spacing:3px;
+      margin-bottom:16px;
+      color:#d9e2d0;
+    }
+
+    .error-sub{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1rem;
+      margin-bottom:48px;
+      max-width:500px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      cursor:pointer;
+      text-decoration:none;
+      color:white;
+      transition:.35s;
+      font-weight:600;
+      letter-spacing:1px;
+      font-family:'Figtree',sans-serif;
+      font-size:.95rem;
+    }
+
+    .btn-primary{
+      background:var(--orange);
+      box-shadow:var(--glow-accent);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(12px);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* Decorative radar ring */
+    .radar{
+      position:fixed;
+      right:-220px;
+      bottom:-220px;
+      width:600px;
+      height:600px;
+      border-radius:50%;
+      border:1px solid rgba(86,108,64,.12);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .radar::before,
+    .radar::after{
+      content:"";
+      position:absolute;
+      inset:12%;
+      border-radius:50%;
+      border:1px solid rgba(86,108,64,.09);
+    }
+
+    .radar::after{
+      inset:28%;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:600px){
+      .nav-links{ display:none; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+    <a href="index.html" class="logo">MCNG</a>
+
+    <div class="nav-links">
+      <a href="index.html#join">Join</a>
+      <a href="changelog">Changelog</a>
+      <a href="gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- PARTICLES -->
+
+  <div class="particles" id="particles"></div>
+
+  <!-- RADAR RING -->
+
+  <div class="radar"></div>
+
+  <!-- 404 CONTENT -->
+
+  <div class="page">
+    <div class="content">
+
+      <p class="error-tag">Error — Location Unknown</p>
+
+      <div class="error-code">404</div>
+
+      <h2 class="error-title">Sector Not Found</h2>
+
+      <p class="error-sub">
+        The page you're looking for has been decommissioned, 
+        relocated, has never exsisted or is under maintenance.
+        Return to the main site.
+      </p>
+
+     <div class="btn-group">
+        <a href="index.html" class="btn btn-primary">Return to Site</a>
+        <a href="https://discord.gg/4858gnPT7J" class="btn btn-secondary">Enlist Today</a>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+
+    // PARTICLES
+
+    const particles = document.getElementById('particles')
+
+    for(let i = 0; i < 70; i++){
+      const p = document.createElement('div')
+      p.classList.add('particle')
+      p.style.left = Math.random() * 100 + '%'
+      p.style.animationDuration = (Math.random() * 10 + 8) + 's'
+      p.style.animationDelay = (Math.random() * 10) + 's'
+      p.style.opacity = Math.random()
+      particles.appendChild(p)
+    }
+
+    // GSAP entrance
+
+    gsap.from(".error-tag",  { y:30, opacity:0, duration:.8, delay:.1 })
+    gsap.from(".error-code", { y:60, opacity:0, duration:1,  delay:.2, ease:"power3.out" })
+    gsap.from(".error-title",{ y:30, opacity:0, duration:.8, delay:.5 })
+    gsap.from(".error-sub",  { y:20, opacity:0, duration:.8, delay:.7 })
+    gsap.from(".btn-group",  { y:20, opacity:0, duration:.8, delay:.9 })
+
+  </script>
+
+</body>
+</html>
