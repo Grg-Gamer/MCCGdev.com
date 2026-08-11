@@ -1,72 +1,36 @@
 {
-  "updated": "2026-08-09 01:42 UTC",
+  "updated": "2026-08-11 06:05 UTC",
   "members": {
-    "PVT": [],
-    "PV2": [],
-    "PFC": [
-      "PFC | Problemfoxking2 | E-J58"
-    ],
-    "SPC": [
-      "SPC | EasternB7 | E-J02"
-    ],
-    "CPL": [
-      "CPL | lakiaat | E-N68",
-      "LOA | Mosahela346 | E-N73"
-    ],
-    "SGT": [],
-    "SSG": [
-      "SSGT | Blackfire | E-N29"
-    ],
-    "SFC": [],
-    "MSG": [],
-    "1SG": [
-      "1SG | Mrlion_Games | E-S28"
-    ],
-    "SGM": [],
-    "CSM": [],
-    "SMA": [],
-    "WO1": [],
-    "CW2": [
-      "CW2 | BenjaKpok | WO-W20"
-    ],
-    "CW3": [
-      "CW3 | gamedev_eliaz | WO-W31",
-      "CW3 | HeroAvantha | WO-W62",
-      "CW3 | Randa_Kaba22 | WO-W56",
-      "CW3 | ziksteam12 | | WO-W36"
-    ],
+    "SR": [],
+    "SA": [],
+    "SN": [],
+    "PO3": [],
+    "PO2": [],
+    "PO1": [],
+    "SCPO": [],
+    "MCPO": [],
+    "CMCPO": [],
+    "MCPCG": [],
+    "CW2": [],
+    "CW3": [],
     "CW4": [],
-    "CW5": [],
-    "2LT": [],
-    "1LT": [
-      "1LT | Proahmet10000 | CO-J33"
+    "ENS": [],
+    "LTJG": [],
+    "LT": [],
+    "LCDR": [],
+    "CDR": [],
+    "CAPT": [],
+    "RDML": [],
+    "RADM": [
+      "RADM | Randa_Kaba22 | CG-081"
     ],
-    "CPT": [],
-    "MAJ": [],
-    "LTC": [
-      "LTC | oLucas_x | CO-S30"
+    "VADM": [
+      "MG | Youknowmeyoukno | CO-G18",
+      "VADM | honzacipher | CG-001"
     ],
-    "COL": [
-      "COL | Grg_Gamer | CO-S47",
-      "COL | Rascal_CT | | CO-S39",
-      "COL | samcio10000 | CO-S16"
+    "ADM": [
+      "ADM | Chunkmonster199 | CG-007"
     ],
-    "BG": [
-      "BG | 3oreo5 | CO-G19",
-      "BG | lazeoftheb | CO-G91"
-    ],
-    "MG": [
-      "MG | enderman90317 | CO-G24",
-      "MG | Youknowmeyoukno | CO-G18"
-    ],
-    "LTG": [
-      "LG | Chunkmonster199 | CO-G07",
-      "LG | honzacipher | CO-G21"
-    ],
-    "GEN": [
-      "GEN | Arrcqne",
-      "GEN | CapybaraFor_L1fe"
-    ],
-    "GA": []
+    "FADM": []
   }
 }
