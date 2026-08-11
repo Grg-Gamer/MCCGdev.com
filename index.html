@@ -31,9 +31,8 @@
       --bg:#050b14;
       --bg2:#0a1420;
       --card:rgba(255,255,255,0.05);
-      --green2:#566c40;
       --text:#f5f5f5;
-      --muted:#9ba39a;
+      --muted:#88b4d8;
       --navy:rgb(15, 30, 44);
       --navy2:rgb(37, 81, 122);
       --border:rgba(255,255,255,0.08);
@@ -294,7 +293,7 @@
     }
 
     .hero-tag{
-      color:#627694;
+      color:var(--muted);
       letter-spacing:4px;
       margin-bottom:25px;
       text-transform:uppercase;
@@ -378,7 +377,7 @@
       font-size:1.1rem;
       background:
       linear-gradient(145deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px dashed rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.15);
     }
 
     .about-info{
@@ -1177,73 +1176,68 @@
     <div class="rank-wrapper">
 
       <div class="glass rank-group">
-        <h3>Junior Enlisted</h3>
+        <h3>Seamen</h3>
         <ul>
-          <li data-rank="PVT">PVT <span class="rank-chevron">›</span></li>
-          <li data-rank="PV2">PV2 <span class="rank-chevron">›</span></li>
-          <li data-rank="PFC">PFC <span class="rank-chevron">›</span></li>
-          <li data-rank="SPC">SPC <span class="rank-chevron">›</span></li>
+          <li data-rank="SR">SR <span class="rank-chevron">›</span></li>
+          <li data-rank="SA">SA <span class="rank-chevron">›</span></li>
+          <li data-rank="SN">SN <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
-        <h3>Non-commissioned Officers</h3>
+        <h3>Petty Officers</h3>
         <ul>
-          <li data-rank="CPL">CPL <span class="rank-chevron">›</span></li>
-          <li data-rank="SGT">SGT <span class="rank-chevron">›</span></li>
-          <li data-rank="SSG">SSG <span class="rank-chevron">›</span></li>
+          <li data-rank="PO3">PO3 <span class="rank-chevron">›</span></li>
+          <li data-rank="PO2">PO2 <span class="rank-chevron">›</span></li>
+          <li data-rank="PO1">PO1 <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
-        <h3>Senior NCOs</h3>
+        <h3>Chief Petty Officers</h3>
         <ul>
-          <li data-rank="SFC">SFC <span class="rank-chevron">›</span></li>
-          <li data-rank="MSG">MSG <span class="rank-chevron">›</span></li>
-          <li data-rank="1SG">1SG <span class="rank-chevron">›</span></li>
-          <li data-rank="SGM">SGM <span class="rank-chevron">›</span></li>
-          <li data-rank="CSM">CSM <span class="rank-chevron">›</span></li>
-          <li data-rank="SMA">SMA <span class="rank-chevron">›</span></li>
+          <li data-rank="SCPO">SCPO <span class="rank-chevron">›</span></li>
+          <li data-rank="MCPO">MCPO <span class="rank-chevron">›</span></li>
+          <li data-rank="CMDC">CMDC <span class="rank-chevron">›</span></li>
+          <li data-rank="MCGC">MCGC <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
-        <h3>Warrant Officers</h3>
+        <h3>Chief Warrant Officers</h3>
         <ul>
-          <li data-rank="WO1">WO1 <span class="rank-chevron">›</span></li>
           <li data-rank="CW2">CW2 <span class="rank-chevron">›</span></li>
           <li data-rank="CW3">CW3 <span class="rank-chevron">›</span></li>
           <li data-rank="CW4">CW4 <span class="rank-chevron">›</span></li>
-          <li data-rank="CW5">CW5 <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
         <h3>Junior Officers</h3>
         <ul>
-          <li data-rank="2LT">2LT <span class="rank-chevron">›</span></li>
-          <li data-rank="1LT">1LT <span class="rank-chevron">›</span></li>
-          <li data-rank="CPT">CPT <span class="rank-chevron">›</span></li>
+          <li data-rank="ENS">ENS <span class="rank-chevron">›</span></li>
+          <li data-rank="LTJG">LTJG <span class="rank-chevron">›</span></li>
+          <li data-rank="LT">LT <span class="rank-chevron">›</span></li>
+          <li data-rank="LCDR">LCDR <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
         <h3>Senior Officers</h3>
         <ul>
-          <li data-rank="MAJ">MAJ <span class="rank-chevron">›</span></li>
-          <li data-rank="LTC">LTC <span class="rank-chevron">›</span></li>
-          <li data-rank="COL">COL <span class="rank-chevron">›</span></li>
+          <li data-rank="CDR">CDR <span class="rank-chevron">›</span></li>
+          <li data-rank="CAPT">CAPT <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
       <div class="glass rank-group">
-        <h3>General Officers</h3>
+        <h3>Flag Officers</h3>
         <ul>
-          <li data-rank="BG">BG <span class="rank-chevron">›</span></li>
-          <li data-rank="MG">MG <span class="rank-chevron">›</span></li>
-          <li data-rank="LTG">LTG <span class="rank-chevron">›</span></li>
-          <li data-rank="GEN">GEN <span class="rank-chevron">›</span></li>
-          <li data-rank="GA">GA <span class="rank-chevron">›</span></li>
+          <li data-rank="RDML">RDML <span class="rank-chevron">›</span></li>
+          <li data-rank="RADM">RADM <span class="rank-chevron">›</span></li>
+          <li data-rank="VADM">VADM <span class="rank-chevron">›</span></li>
+          <li data-rank="ADM">ADM <span class="rank-chevron">›</span></li>
+          <li data-rank="FADM">FADM <span class="rank-chevron">›</span></li>
         </ul>
       </div>
 
@@ -1311,7 +1305,7 @@
         Stand at the shoreline. Lead maritime operations. Protect Highrock's waters. Become part of an elite maritime response force built on discipline, coordination, and operational excellence.
       </p>
 
-      <a href="https://discord.gg/4858gnPT7J" 
+      <a href="https://discord.gg/9s84Y4rgrJ" 
          class="btn btn-primary join-btn"
          target="_blank">
         ENLIST TODAY
