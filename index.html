@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MCNG | Maplecliff National Guard</title>
-  <link rel="icon" type="image/png" href="mcng-web-images/favicon.png">
+  <title>MCCG | Maplecliff Coast Guard</title>
+  <link rel="icon" type="image/png" href="MCCG-web-images/favicon.png">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,19 @@
     }
 
     :root{
-      --bg:#060806;
-      --bg2:#0d120d;
+      --bg:#050b14;
+      --bg2:#0a1420;
       --card:rgba(255,255,255,0.05);
-      --green:#39452b;
       --green2:#566c40;
       --text:#f5f5f5;
       --muted:#9ba39a;
+      --navy:rgb(15, 30, 44);
+      --navy2:rgb(37, 81, 122);
       --border:rgba(255,255,255,0.08);
-      --glow:0 0 25px rgba(86,108,64,.35);
+      --glow:0 0 25px rgba(255, 95, 31, 0.55);
+      --glow2:0 0 25px rgba(47,143,219,.35);
+      --orange2:#ff5f1f;
+      --orange:rgb(136, 39, 0);
     }
 
     html{
@@ -55,8 +59,8 @@
       position:fixed;
       inset:0;
       background:
-      radial-gradient(circle at top right, rgba(86,108,64,.15), transparent 25%),
-      radial-gradient(circle at bottom left, rgba(57,69,43,.15), transparent 30%);
+      radial-gradient(circle at top right, rgba(255, 95, 31, 0.15), transparent 25%),
+      radial-gradient(circle at bottom left, rgba(226, 119, 57, 0.10), transparent 30%);
       pointer-events:none;
       z-index:-2;
     }
@@ -67,7 +71,7 @@
       position:fixed;
       inset:0;
       background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+       linear-gradient(rgba(248, 2, 2, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size:60px 60px;
       opacity:.15;
@@ -168,7 +172,7 @@
       bottom:-8px;
       width:0%;
       height:1px;
-      background:var(--green2);
+      background:var(--orange2);
       transition:.3s;
     }
 
@@ -239,7 +243,6 @@
       left:0;
       right:0;
       height:500px;
-      background:linear-gradient(to bottom, transparent, #060806);
       z-index:6;
       pointer-events:none;
     }
@@ -248,8 +251,8 @@
       position:absolute;
       inset:0;
       background:
-      linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.4)),
-      url('https://img.freepik.com/free-vector/army-camouflage-vector-seamless-pattern-texture-military-camouflage-repeats-seamless-army-design-vector-background_1142-11146.jpg?semt=ais_hybrid&w=740&q=80?q=80&w=1920&auto=format&fit=crop') center/cover;
+      linear-gradient(to bottom, rgba(5, 11, 20, 0) 45%, rgba(5, 11, 20, 1) 100%),
+      url('mccg-web-images/hero-bg.svg') center/cover;
       transform:scale(1.1);
     }
 
@@ -291,7 +294,7 @@
     }
 
     .hero-tag{
-      color:#a7b39a;
+      color:#627694;
       letter-spacing:4px;
       margin-bottom:25px;
       text-transform:uppercase;
@@ -333,7 +336,7 @@
     }
 
     .btn-primary{
-      background:var(--green);
+      background:var(--orange);
       box-shadow:var(--glow);
     }
 
@@ -415,14 +418,14 @@
 
     .operation-card:hover{
       transform:translateY(-10px);
-      border-color:rgba(86,108,64,.4);
+      border-color:var(--orange);
       box-shadow:var(--glow);
     }
 
     .operation-card span{
       font-size:.85rem;
       letter-spacing:2px;
-      color:#849274;
+      color:rgb(253, 154, 114);
     }
 
     .operation-card h3{
@@ -450,6 +453,7 @@
 
     .vehicle-card:hover{
       transform:translateY(-8px);
+      border-color:var(--orange);
       box-shadow:var(--glow);
     }
 
@@ -459,8 +463,7 @@
       align-items:center;
       justify-content:center;
       color:#8b8b8b;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      background:
+      border-bottom:1px solid var(--orange)
       linear-gradient(to bottom right, rgba(255,255,255,.03), rgba(255,255,255,.01));
     }
 
@@ -492,25 +495,6 @@
       display:block;
     }
 
-    /* LEGACY */
-
-    .legacy-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px;
-    }
-
-    .legacy-item{
-      padding:30px;
-      text-align:center;
-      transition:.3s;
-    }
-
-    .legacy-item:hover{
-      transform:scale(1.03);
-      box-shadow:var(--glow);
-    }
-
     /* RANKS */
 
     .rank-wrapper{
@@ -538,7 +522,7 @@
     .rank-group li{
       padding:10px 15px;
       border-radius:12px;
-      background:rgba(255,255,255,.03);
+      background:var(--bg2);
       color:#b4bbb1;
       transition:.3s;
       cursor:pointer;
@@ -550,7 +534,7 @@
     }
 
     .rank-group li:hover{
-      background:rgba(86,108,64,.2);
+      background:rgba(253, 153, 114, 0.068);
       transform:translateX(5px);
     }
 
@@ -582,8 +566,8 @@
     }
 
     .rank-modal{
-      background:#0e140e;
-      border:1px solid rgba(86,108,64,.35);
+      background:var(--bg2);
+      border:1px solid var(--navy);
       border-radius:20px;
       padding:36px 40px;
       width:min(500px,90vw);
@@ -591,7 +575,7 @@
       overflow-y:auto;
       transform:translateY(20px) scale(.97);
       transition:transform .25s ease;
-      box-shadow:0 0 50px rgba(86,108,64,.2);
+      box-shadow:var(--glow2);
       position:relative;
     }
 
@@ -660,7 +644,7 @@
       width:7px;
       height:7px;
       border-radius:50%;
-      background:var(--green2);
+      background:var(--navy2);
       flex-shrink:0;
     }
 
@@ -742,20 +726,7 @@
       left:0;
       right:0;
       height:420px;
-      background:linear-gradient(to bottom, #060806, transparent);
-      z-index:6;
-      pointer-events:none;
-    }
-
-    /* Soft gradient bleeding out of the join background at the bottom */
-    .join::after{
-      content:"";
-      position:absolute;
-      bottom:0;
-      left:0;
-      right:0;
-      height:420px;
-      background:linear-gradient(to top, #060806, transparent);
+      background:linear-gradient(to bottom, #050b14, transparent);
       z-index:6;
       pointer-events:none;
     }
@@ -764,8 +735,7 @@
       position:absolute;
       inset:0;
       background:
-      linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.6)),
-      url('https://t3.ftcdn.net/jpg/07/76/98/10/360_F_776981069_8MmYerjdNVVZNFwS47UT2aYg7SLWZSlL.jpg?q=80&w=1920&auto=format&fit=crop') center/cover;
+      url('mccg-web-images/join-bg.png') center/cover;
       filter:brightness(.6);
       transform:scale(1.1);
     }
@@ -867,13 +837,13 @@
 
 <body>
 
-  <!-- PARTICLES BACKGROUND (fixed, shows through all sections except hero, join & footer) -->
+  <!-- PARTICLES BACKGROUND -->
   <div id="particles-js"></div>
 
   <!-- NAV -->
 
   <nav>
-    <a href="#" class="logo">MCNG</a>
+    <a href="#" class="logo">MCCG</a>
 
     <div class="nav-links">
       <a href="#about">About</a>
@@ -898,12 +868,10 @@
     <div class="hero-content">
       <div class="hero-tag">HIGHROCK BORDER ROLEPLAY</div>
 
-      <h1>MCNG</h1>
+      <h1>MCCG</h1>
 
       <p>
-        Maplecliff National Guard is a tactical border defense force within HRBRP,
-        specializing in convoy security, peacekeeping operations, rapid response deployments,
-        and support operations for allied agencies across Highrock.
+        Maplecliff Coast Guard is a maritime security force within HRBRP, specializing in maritime security, search and rescue operations, vessel interdiction, and support operations for allied agencies across Highrock's waters.
       </p>
 
       <div class="hero-buttons">
@@ -918,43 +886,38 @@
 
   <section id="about">
 
-    <h2 class="section-title">About MCNG</h2>
+    <h2 class="section-title">About MCCG</h2>
 
     <p class="section-sub">
-      Built for border security, tactical deployment, and operational superiority,
-      MCNG serves as a highly coordinated National Guard force operating within the
-      forests and checkpoints of Highrock.
+      Built for maritime security, rapid deployment, and operational superiority, MCCG serves as a highly coordinated Coast Guard force operating within the harbors and coastline of Highrock.
     </p>
 
     <div class="about-grid">
 
       <div class="glass placeholder">
-        <img class="cp-image" src="mcng-web-images/cp.png" alt="MCNG Checkpoint">
+        <img class="cp-image" src="MCCG-web-images/cp.png" alt="MCCG Checkpoint">
       </div>
 
       <div class="about-info">
 
         <div class="glass about-card">
-          <h3>Border Security Force</h3>
+          <h3>Port & Harbor Security</h3>
           <p>
-            MCNG maintains operational control over critical border zones,
-            checkpoint systems, and tactical response sectors.
+            MCCG maintains operational control over critical port zones, harbor checkpoints, and coastal response sectors.
           </p>
         </div>
 
         <div class="glass about-card">
-          <h3>Peacekeeping Operations</h3>
+          <h3>Search & Rescue Operations</h3>
           <p>
-            Units are trained to stabilize dangerous situations and provide
-            support during large-scale law enforcement incidents.
+            Units are trained to stabilize dangerous situations and provide support during large-scale maritime distress incidents.
           </p>
         </div>
 
         <div class="glass about-card">
-          <h3>Convoy & Tactical Support</h3>
+          <h3>Vessel & Tactical Support</h3>
           <p>
-            From armored transport to rapid deployment security, MCNG protects
-            operations across Highrock with precision and discipline.
+            "From vessel escort to rapid deployment security, MCCG protects operations across Highrock's waters with precision and discipline.
           </p>
         </div>
 
@@ -979,17 +942,17 @@
 
       <div class="glass operation-card">
         <span>01</span>
-        <h3>Border Security</h3>
+        <h3>Port Security</h3>
         <p>
-          Tactical checkpoint management and perimeter protection operations.
+          Harbor checkpoint management and perimeter protection operations.
         </p>
       </div>
 
       <div class="glass operation-card">
         <span>02</span>
-        <h3>Convoy Escorts</h3>
+        <h3>Vessel Escorts</h3>
         <p>
-          High-security convoy movement with armored tactical protection.
+          High-security vessel movement with armed tactical protection.
         </p>
       </div>
 
@@ -1003,9 +966,9 @@
 
       <div class="glass operation-card">
         <span>04</span>
-        <h3>Peacekeeping</h3>
+        <h3>Search & Rescue</h3>
         <p>
-          Stabilization missions and organized response during high-risk events.
+         Stabilization missions and organized response during high-risk events.
         </p>
       </div>
 
@@ -1028,7 +991,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car1.png" alt="Falcon Police Interceptor 2019">
+          <img src="MCCG-web-images/car1.png" alt="Falcon Police Interceptor 2019">
         </div>
         <div class="vehicle-content">
           <h3>Falcon Police Interceptor 2019</h3>
@@ -1038,7 +1001,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car2.png" alt="Falcon Police Interceptor 2024">
+          <img src="MCCG-web-images/car2.png" alt="Falcon Police Interceptor 2024">
         </div>
         <div class="vehicle-content">
           <h3>Falcon Interceptor Utility 2024</h3>
@@ -1048,7 +1011,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car3.png" alt="Falcon Interceptor Utility 2013">
+          <img src="MCCG-web-images/car3.png" alt="Falcon Interceptor Utility 2013">
         </div>
         <div class="vehicle-content">
           <h3>Falcon Interceptor Utility 2013</h3>
@@ -1058,7 +1021,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car4.png" alt="Falcon Advance 350 2020">
+          <img src="MCCG-web-images/car4.png" alt="Falcon Advance 350 2020">
         </div>
         <div class="vehicle-content">
           <h3>Falcon Advance 350 2020</h3>
@@ -1068,7 +1031,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car5.png" alt="Falcon Rampage Interceptor 2021">
+          <img src="MCCG-web-images/car5.png" alt="Falcon Rampage Interceptor 2021">
         </div>
         <div class="vehicle-content">
           <h3>Falcon Rampage Interceptor 2021</h3>
@@ -1078,7 +1041,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car6.png" alt="Chevron Camion PPV 2021">
+          <img src="MCCG-web-images/car6.png" alt="Chevron Camion PPV 2021">
         </div>
         <div class="vehicle-content">
           <h3>Chevron Camion PPV 2021</h3>
@@ -1088,7 +1051,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car7.png" alt="Chevron Camion PPV 2000">
+          <img src="MCCG-web-images/car7.png" alt="Chevron Camion PPV 2000">
         </div>
         <div class="vehicle-content">
           <h3>Chevron Camion PPV 2000</h3>
@@ -1098,7 +1061,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car8.png" alt="Bullhorn Pueblo Pursuit 2022">
+          <img src="MCCG-web-images/car8.png" alt="Bullhorn Pueblo Pursuit 2022">
         </div>
         <div class="vehicle-content">
           <h3>Bullhorn Pueblo Pursuit 2022</h3>
@@ -1108,7 +1071,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car9.png" alt="Bullhorn Prancer 2015">
+          <img src="MCCG-web-images/car9.png" alt="Bullhorn Prancer 2015">
         </div>
         <div class="vehicle-content">
           <h3>Bullhorn Prancer 2015</h3>
@@ -1118,7 +1081,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car20.png" alt="Bullhorn Determinator Blackjack Widebody 2022">
+          <img src="MCCG-web-images/car20.png" alt="Bullhorn Determinator Blackjack Widebody 2022">
         </div>
         <div class="vehicle-content">
           <h3>Bullhorn Determinator Blackjack Widebody 2022</h3>
@@ -1128,7 +1091,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car18.png" alt="Chevron Captain PPV 2009">
+          <img src="MCCG-web-images/car18.png" alt="Chevron Captain PPV 2009">
         </div>
         <div class="vehicle-content">
           <h3>Chevron Captain PPV 2009</h3>
@@ -1138,7 +1101,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car12.png" alt="Chevron Platoro PPV 2019">
+          <img src="MCCG-web-images/car12.png" alt="Chevron Platoro PPV 2019">
         </div>
         <div class="vehicle-content">
           <h3>Chevron Platoro PPV 2019</h3>
@@ -1148,7 +1111,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car19.png" alt="Stuttgart Runner Prisoner Transport 2020">
+          <img src="MCCG-web-images/car19.png" alt="Stuttgart Runner Prisoner Transport 2020">
         </div>
         <div class="vehicle-content">
           <h3>Stuttgart Runner Prisoner Transport 2020</h3>
@@ -1158,7 +1121,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car14.png" alt="Emergency Services Falcon Advance+ 2020">
+          <img src="MCCG-web-images/car14.png" alt="Emergency Services Falcon Advance+ 2020">
         </div>
         <div class="vehicle-content">
           <h3>Emergency Services Falcon Advance+ 2020</h3>
@@ -1168,7 +1131,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car15.png" alt="SWAT Armored Truck 2011">
+          <img src="MCCG-web-images/car15.png" alt="SWAT Armored Truck 2011">
         </div>
         <div class="vehicle-content">
           <h3>SWAT Armored Truck 2011</h3>
@@ -1178,7 +1141,7 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car16.png" alt="Mobile Command 2005">
+          <img src="MCCG-web-images/car16.png" alt="Mobile Command 2005">
         </div>
         <div class="vehicle-content">
           <h3>Mobile Command 2005</h3>
@@ -1188,37 +1151,13 @@
 
       <div class="glass vehicle-card">
         <div class="vehicle-image">
-          <img src="mcng-web-images/car17.png" alt="Equipment Trailer">
+          <img src="MCCG-web-images/car17.png" alt="Equipment Trailer">
         </div>
         <div class="vehicle-content">
           <h3>Equipment Trailer</h3>
           <p>Transport unit for logistics and tactical support gear.</p>
         </div>
       </div>
-
-    </div>
-
-  </section>
-
-  <!-- LEGACY -->
-
-  <section>
-
-    <h2 class="section-title">Legacy Units</h2>
-
-    <p class="section-sub">
-      The foundation of MCNG was built from specialized units and tactical divisions
-      that shaped the department's operational identity.
-    </p>
-
-    <div class="legacy-grid">
-
-      <div class="glass legacy-item">Checkpoint Patrol</div>
-      <div class="glass legacy-item">Sniper Force</div>
-      <div class="glass legacy-item">High Intelligence Unit</div>
-      <div class="glass legacy-item">MIA</div>
-      <div class="glass legacy-item">US Marshals</div>
-      <div class="glass legacy-item">High Rock Military</div>
 
     </div>
 
@@ -1323,21 +1262,18 @@
       <h2 class="section-title">Command Center</h2>
 
       <p class="section-sub">
-        Tactical coordination, operational monitoring,
-        convoy management, and rapid-response deployment systems.
+        Tactical coordination, operational monitoring, fleet management, and rapid-response deployment systems.
       </p>
 
       <div class="glass command-panel">
         <h3 style="margin-bottom:20px;">Operational Leadership</h3>
 
         <p style="line-height:1.8;color:#a5ada2;">
-          MCNG leadership coordinates deployments through advanced tactical command
-          systems, maintaining operational oversight across checkpoints,
-          peacekeeping zones, and convoy security sectors.
+          MCCG leadership coordinates deployments through advanced tactical command systems, maintaining operational oversight across port sectors, coastal patrol zones, and maritime security operations.
         </p>
 
         <div class="deployment-image glass">
-          <img src="mcng-web-images/deployment-replacement-again.png" alt="MCNG Deployments">
+          <img src="MCCG-web-images/deployment-replacement-again.png" alt="MCCG Deployments">
         </div>
       </div>
 
@@ -1369,12 +1305,10 @@
 
     <div class="join-content">
 
-      <h2>JOIN MCNG</h2>
+      <h2>JOIN MCCG</h2>
 
       <p>
-        Stand at the border. Lead tactical operations. Protect Highrock.
-        Become part of an elite military response force built on discipline,
-        coordination, and operational excellence.
+        Stand at the shoreline. Lead maritime operations. Protect Highrock's waters. Become part of an elite maritime response force built on discipline, coordination, and operational excellence.
       </p>
 
       <a href="https://discord.gg/4858gnPT7J" 
@@ -1388,12 +1322,12 @@
   </section>
 
  <footer>
-    © 2026 Maplecliff National Guard. All rights reserved.<br>
+    © 2026 Maplecliff Coast Guard. All rights reserved.<br>
     Not affiliated with or endorsed by Roblox Corporation.<br>
     Member display names shown on this site are sourced from our public Discord server and updated weekly.
     If you wish to have your name removed, contact us on Discord.
     This site does not collect, store, or share any personal information from visitors.<br>
-    Designed By Mosa & Grg • 
+    Designed By Grg • 
     <a href="https://discord.com/privacy" target="_blank" rel="noopener noreferrer" class="footer-link">Discord Privacy Policy</a>
     &nbsp;•&nbsp;
     <a href="https://discord.gg/highrock" target="_blank" rel="noopener noreferrer" class="footer-link">Highrock Border Roleplay</a>
