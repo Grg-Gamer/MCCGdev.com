@@ -8,42 +8,37 @@ from datetime import datetime
 # Map each rank abbreviation to the EXACT Discord role name in your server.
 # If a rank doesn't have a Discord role, remove it from the dict.
 RANK_TO_ROLE = {
-    # Junior Enlisted
-    "PVT":  "PVT | Private",
-    "PV2":  "PV2 | Private Second Class",
-    "PFC":  "PFC | Private First Class",
-    "SPC":  "SPC | Specialist",
-    # Non-commissioned Officers
-    "CPL":  "CPL | Corporal",
-    "SGT":  "SGT | Sergeant",
-    "SSG":  "SSG | Staff Sergeant",
-    # Senior NCOs
-    "SFC":  "SFC | Sergeant First Class",
-    "MSG":  "MSG | Master Sergeant",
-    "1SG":  "1SG | First Sergeant",
-    "SGM":  "SGN | Sergeant Major",
-    "CSM":  "CSM | Command Sergeant Major",
-    "SMA":  "SMA | Sergeant Major of the Army",
-    # Warrant Officers
-    "WO1":  "WO 1 | Warrant Officer 1",
+    # Seamen
+    "SR":  "SR | Seaman Recruit",
+    "SA":  "SA | Seaman Apprentice",
+    "SN":  "SN | Seaman",
+    # Petty Officers
+    "PO3": "PO3 | Petty Officer Third Class",
+    "PO2": "PO2 | Petty Officer Second Class",
+    "PO1": "PO1 | Petty Officer First Class",
+    # Chief Petty Officers
+    "SCPO":"SCPO | Senior Chief Petty Officer",
+    "MCPO":"MCPO | Master Chief Petty Officer",
+    "CMCPO":"CMCPO | Command Master Chief Petty Officer",
+    "MCPCG":"MCPCG | Master Chief Petty Officer Of The Coast Guard",
+    # Chief Warrant Officers
     "CW2":  "CW2 | Chief Warrant Officer 2",
     "CW3":  "CW3 | Chief Warrant Officer 3",
     "CW4":  "CW4 | Chief Warrant Officer 4",
-    "CW5":  "CW5 | Chief Warrant Officer 5",
     # Junior Officers
-    "2LT":  "2LT | Second Lieutenant",
-    "1LT":  "1LT | First Lieutenant",
-    "CPT":  "CPT | Captain",
+    "ENS":  "ENS | Ensign",
+    "LTJG":  "LTJG | Lieutenant Junior Grade",
+    "LT":  "LT | Lieutenant",
+    "LCDR":  "LCDR | Lieutenant Commander",
     # Senior Officers
-    "MAJ":  "MAJ | Major",
-    "LTC":  "LTC | Lieutenant Colonel",
-    "COL":  "COL | Colonel",
-    # General Officers
-    "BG":   "Brigadier General",
-    "MG":   "Major General",
-    "LTG":  "Lieutenant General",
-    "GEN":  "General",
-    "GA":   "General of the National Guard",
+    "CDR":  "CDR | Commander",
+    "CAPT":  "CAPT | Captain",
+    # Flag Officers
+    "RDML":   "RDML | Rear Admiral Lower Half",
+    "RADM":   "RADM | Rear Admiral",
+    "VADM":  "VADM | Vice Admiral",
+    "ADM":  "ADM | Admiral",
+    "FADM":   "FADM | Fleet Admiral (Wartime Only)",
 }
 
 # ── NAME OVERRIDES ───────────────────────────────────────────────────────────
