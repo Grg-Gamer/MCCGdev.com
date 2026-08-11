@@ -1,6 +1,6 @@
  <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/gallery6.png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/[IMAGE_NAME].png" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.png">
         </div>
         <div class="photo-content">
           <div class="photo-credit">

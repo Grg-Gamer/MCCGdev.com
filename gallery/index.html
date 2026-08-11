@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MCNG | Gallery</title>
-  <link rel="icon" href="../mcng-web-images/favicon.png" type="image/png">
+  <title>MCCG | Gallery</title>
+  <link rel="icon" href="../mccg-web-images/favicon.png" type="image/png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,18 @@
     }
 
     :root{
-      --bg:#060806;
-      --bg2:#0d120d;
+      --bg:#050b14;
+      --bg2:#0a1420;
       --card:rgba(255,255,255,0.05);
-      --green:#39452b;
-      --green2:#566c40;
       --text:#f5f5f5;
-      --muted:#9ba39a;
+      --muted:#88b4d8;
       --border:rgba(255,255,255,0.08);
-      --glow:0 0 25px rgba(86,108,64,.35);
+      --glow:0 0 25px rgba(255, 95, 31, 0.55);
+      --glow1:rgba(255, 95, 31, 0.15);
+      --orange2:rgb(255, 95, 31);
+      --orange:rgb(136, 39, 0);
+      --navy:rgb(15, 30, 44);
+      --navy2:rgb(37, 81, 122);
     }
 
     html{
@@ -55,8 +58,8 @@
       position:fixed;
       inset:0;
       background:
-        radial-gradient(circle at top right, rgba(86,108,64,.15), transparent 25%),
-        radial-gradient(circle at bottom left, rgba(57,69,43,.15), transparent 30%);
+        radial-gradient(circle at top right, var(--glow1), transparent 25%),
+        radial-gradient(circle at bottom left, var(--glow1), transparent 30%);
       pointer-events:none;
       z-index:-2;
     }
@@ -117,6 +120,12 @@
       width:100%;
     }
 
+
+   .particles{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+    }
     .nav-links{
       display:flex;
       gap:30px;
@@ -142,7 +151,7 @@
       bottom:-8px;
       width:0%;
       height:1px;
-      background:var(--green2);
+      background:var(--orange2);
       transition:.3s;
     }
 
@@ -225,6 +234,7 @@
     .photo-card:hover{
       transform:translateY(-8px);
       box-shadow:var(--glow);
+      border-color:var(--orange);
     }
 
     .photo-image{
@@ -266,7 +276,7 @@
     .credit-label{
       font-size:.75rem;
       letter-spacing:2px;
-      color:#849274;
+      color:var(--navy2);
       text-transform:uppercase;
     }
 
@@ -412,7 +422,7 @@
   <!-- NAV -->
 
   <nav>
-    <a href="../" class="logo">MCNG</a>
+    <a href="../" class="logo">MCCG</a>
 
     <div class="nav-links">
       <a href="../index.html#join">Join</a>
@@ -435,7 +445,7 @@
 
     <!--
       HOW TO ADD A PHOTO:
-      Copy the template located in MCNG.com/gallery
+      Copy the template located in MCCG.com/gallery
       Then change the image directionry to your images and also add the personells name.
       Its easy if you fail it your dum (with all due respect)
     -->
@@ -444,153 +454,153 @@
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/deployment-replacement.png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(3).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(4).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(5).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(6).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
       <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(7).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
        <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0516(8).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"> </span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
        <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0526(1).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
 
        <div class="glass photo-card" onclick="openLightbox(this)">
         <div class="photo-image">
-          <img src="../mcng-web-images/0526(2).png" alt="MCNG Photo" data-fallback="../mcng-web-images/placeholder.png">
+          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
         </div>
         <div class="photo-content">
           <div class="photo-credit">
             <span class="credit-label">Photo by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
           <div class="credit-divider"></div>
           <div class="photo-credit">
             <span class="credit-label">Edited by:</span>
-            <span class="credit-name">Grg_Gamer</span>
+            <span class="credit-name"></span>
           </div>
         </div>
       </div>
@@ -619,7 +629,7 @@
   <footer>
     All photos are the property of their respective creators and are used with permission.<br>
     © 2026 Maplecliff National Guard. Not affiliated with or endorsed by Roblox Corporation.<br>
-    Designed By Mosa & Grg •
+    Designed by Grg •
     <a href="https://discord.gg/highrock" target="_blank" rel="noopener noreferrer" class="footer-link">Highrock Border Roleplay</a>
     &nbsp;•&nbsp;
     <a href="../" class="footer-link">Home</a>
@@ -628,6 +638,9 @@
   <script>
 
     // PARTICLES.JS
+    particlesJS.load('particles-js', 'particlesjs-config.json', function(){});
+
+    // PARTICLES.JS — loads config from particlesjs-config.json
     particlesJS.load('particles-js', 'particlesjs-config.json', function(){});
 
     // LENIS
