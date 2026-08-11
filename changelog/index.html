@@ -7,7 +7,7 @@
 
   <title>MCNG Changelog</title>
 
-  <link rel="icon" href="../mcng-web-images/favicon.png" type="image/png">
+  <link rel="icon" href="../mccg-web-images/favicon.png" type="image/png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,21 @@
     }
 
     :root{
-      --bg:#060806;
-      --bg2:#0d120d;
+      --bg:#050b14;
+      --bg2:#0a1420;
       --green:#39452b;
       --green2:#566c40;
       --text:#f5f5f5;
-      --muted:#9ba39a;
+      --muted:#88b4d8;
+      --navy:rgb(15, 30, 44);
+      --navy2:rgb(37, 81, 122);;
       --border:rgba(255,255,255,0.08);
       --card:rgba(255,255,255,0.04);
-      --glow:0 0 25px rgba(86,108,64,.35);
+      --glow:0 0 25px rgba(255, 95, 31, 0.55);
+      --glow2:0 0 25px rgba(47,143,219,.35);
+      --glow3:rgba(255, 95, 31, 0.15);
+      --orange2:#ff5f1f;
+      --orange:rgb(136, 39, 0);
     }
 
     html{
@@ -55,8 +61,8 @@
       position:fixed;
       inset:0;
       background:
-      radial-gradient(circle at top right, rgba(86,108,64,.15), transparent 25%),
-      radial-gradient(circle at bottom left, rgba(57,69,43,.15), transparent 30%);
+      radial-gradient(circle at top right, var(--glow3), transparent 25%),
+      radial-gradient(circle at bottom left, var(--glow3), transparent 30%);
       z-index:-2;
       pointer-events:none;
     }
@@ -152,15 +158,14 @@
       position:absolute;
       inset:0;
       background:
-      linear-gradient(
+     linear-gradient(
       to bottom,
       rgba(0,0,0,.05) 0%,
       rgba(0,0,0,.35) 30%,
       rgba(0,0,0,.75) 65%,
       #060806 100%
       ),
-      url('https://t3.ftcdn.net/jpg/07/76/98/10/360_F_776981069_8MmYerjdNVVZNFwS47UT2aYg7SLWZSlL.jpg?q=80&w=1920&auto=format&fit=crop') center/cover;
-      opacity:.7;
+      url('../mccg-web-images/hero-bg.svg') center/cover;
       transform:scale(1.1);
     }
 
@@ -171,7 +176,7 @@
     }
 
     .hero-tag{
-      color:#a2af97;
+      color:var(--muted);
       letter-spacing:4px;
       margin-bottom:20px;
       font-size:.85rem;
@@ -214,6 +219,7 @@
 
     .card:hover{
       transform:translateY(-8px);
+      border-color:var(--orange);
       box-shadow:var(--glow);
     }
 
@@ -239,7 +245,7 @@
     }
 
     .date{
-      color:#8da17d;
+      color:var(--muted);
       letter-spacing:2px;
       font-size:.8rem;
       margin-bottom:15px;
@@ -272,8 +278,9 @@
     .modal-box{
       width:100%;
       max-width:560px;
-      background:#0b0f0b;
-      border:1px solid rgba(255,255,255,.08);
+      background:var(--bg);
+      border:1px solid var(--navy);
+      box-shadow:var(--glow2);
       border-radius:28px;
       padding:35px;
       backdrop-filter:blur(16px);
@@ -294,12 +301,12 @@
     }
 
     .modal-box::-webkit-scrollbar-thumb {
-      background: rgba(86,108,64,0.6);
+      background:var(--navy2);
       border-radius: 10px;
     }
 
     .modal-box::-webkit-scrollbar-thumb:hover {
-      background: rgba(86,108,64,0.8);
+      background: var(--muted);
     }
 
     @keyframes popup{
@@ -345,7 +352,7 @@
       width:100%;
       padding:16px;
       border:none;
-      background:var(--green);
+      background:var(--navy2);
       color:white;
       border-radius:14px;
       cursor:pointer;
@@ -380,12 +387,12 @@
     }
 
     .generated-box::-webkit-scrollbar-thumb {
-      background: rgba(86,108,64,0.5);
+      background:var(--navy2);
       border-radius: 10px;
     }
 
     .generated-box::-webkit-scrollbar-thumb:hover {
-      background: rgba(86,108,64,0.7);
+      background:var(--muted);
     }
 
     .generated-box pre{
@@ -398,7 +405,7 @@
 
     .copy-btn{
       margin-top:15px;
-      background:#566c40 !important;
+      background:var(--navy2) !important;
       width:100%;
     }
 
@@ -429,7 +436,7 @@
   <nav>
 
     <a href="../" class="logo">
-      MCNG
+      MCCG
     </a>
 
     <button class="admin-btn" onclick="openPasswordModal()">
@@ -468,8 +475,6 @@
 
     <div class="changelog-grid">
 
-      <!-- ADD NEW CHANGELOGS UNDER THIS -->
-
       <div class="card">
 
         <div class="card-content">
@@ -483,107 +488,17 @@
           </h2>
 
           <p>
-            Official MCNG website launched.
-            Developed by Grandpa Joey (Mosahela) & Grg_Gamer.
-            Image credits: Oreogod / Grg / Capy / Enderman
+            Official MCCG website launched.
+            Developed by Grg_Gamer.
+            Image credits:
           </p>
 
         </div>
 
       </div>
+      <!-- ADD NEW CHANGELOGS UNDER THIS -->
 
       
-<div class="card">
-
-  <div class="card-content">
-
-    <div class="date">
-      MAY 21, 2026
-    </div>
-
-    <h2>
-      Gallery Creation
-    </h2>
-
-    <p>
-      Gallery added to the MCNG website. Developed by Grandpa Joey (Mosahela) & Grg_Gamer.
-    </p>
-
-  </div>
-
-</div>
-
-        <div class="card">
-
-  <div class="card-content">
-
-    <div class="date">
-
-      MAY 22 2026
-
-    </div>
-
-    <h2>
-
-      404 Page Created
-
-    </h2>
-
-    <p>
-
-      Added custom 404 page. Developed by Grg_Gamer & Grandpa Joey (Mosahela)
-
-    </p>
-
-  </div>
-
-</div>
-
-         <div class="card">
-
-  <div class="card-content">
-
-    <div class="date">
-
-      MAY 30 2026
-
-    </div>
-
-    <h2>
-
-      Automatic Rank Update Added
-
-    </h2>
-
-    <p>
-
-      Created a custom bot that automatically updates rank displays every week. Developed by Grg_Gamer
-
-    </p>
-
-  </div>
-
-</div>
-
-      <div class="card">
-
-        <div class="card-content">
-
-          <div class="date">
-            JUNE 4 2026
-          </div>
-
-          <h2>
-            Interactive Backround Added
-          </h2>
-
-          <p>
-            Interactive backround added to the main site and the gallery. Suggested by Tuna (pilotakeksz). Developed by Grg_Gamer & Grandpa Joey (Mosahela)
-          </p>
-
-        </div>
-
-      </div>
 
       <!-- ADD NEW CHANGELOGS ABOVE THIS -->
       
@@ -709,7 +624,7 @@
       document.getElementById('passwordModal').style.display = "flex"
 
     }
-    const ADMIN_PASSWORD_HASH = "1b5373891f33d60931c0fa2db1319b61726cbc3e5377fd8e8e3308557dfd85b8"
+    const ADMIN_PASSWORD_HASH = "ec1ab0116fe0031cca497a91248c90ebd554d1f3435fc5aeee584e2f52dd0814"
 
     async function hashText(text){
       const data = new TextEncoder().encode(text)
@@ -776,7 +691,7 @@
 
   <div class="card-image">
 
-    <img src="mcng-web-images/${image}" alt="${title}">
+    <img src="mccg-web-images/${image}" alt="${title}">
 
   </div>
 
@@ -838,7 +753,7 @@ STEP 3:
 If using an image:
 Put the image file inside:
 
-mcng-web-images/
+mccg-web-images/
 
 GENERATED CODE:
 
@@ -847,8 +762,14 @@ ${code}`
     }
 
     function copyCode(){
-      const text = document.getElementById('generatedCode').textContent
+      const fullText = document.getElementById('generatedCode').textContent
+      const marker = 'GENERATED CODE:'
+      const markerIndex = fullText.indexOf(marker)
+      const text = markerIndex !== -1
+        ? fullText.slice(markerIndex + marker.length).trim()
+        : fullText
       const btn = document.querySelector('.copy-btn')
+
       navigator.clipboard.writeText(text).then(() => {
         btn.textContent = 'Copied Code ✓'
         setTimeout(() => { btn.textContent = 'Copy Code' }, 2500)

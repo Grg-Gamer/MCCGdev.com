@@ -225,6 +225,37 @@
       gap:25px;
     }
 
+    .gallery-grid.empty-state{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:260px;
+      padding:40px 0;
+      grid-template-columns:none;
+    }
+
+    .empty-message{
+      max-width:680px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.04);
+      border-radius:24px;
+      padding:40px 30px;
+      color:#d8d8d8;
+      box-shadow:0 0 50px rgba(0,0,0,0.15);
+    }
+
+    .empty-message h3{
+      font-size:2rem;
+      margin-bottom:16px;
+      color:#f5f5f5;
+    }
+
+    .empty-message p{
+      color:#b8c2d0;
+      line-height:1.7;
+    }
+
     .photo-card{
       overflow:hidden;
       transition:.4s;
@@ -276,7 +307,7 @@
     .credit-label{
       font-size:.75rem;
       letter-spacing:2px;
-      color:var(--navy2);
+      color:var(--muted);
       text-transform:uppercase;
     }
 
@@ -373,7 +404,7 @@
       padding:40px 8%;
       text-align:center;
       border-top:1px solid rgba(255,255,255,.05);
-      color:#7c847a;
+      color:var(--muted);
       font-size:.82rem;
       line-height:2;
       position:relative;
@@ -382,7 +413,7 @@
     }
 
     .footer-link{
-      color:#7c847a;
+      color:var(--muted);
       text-decoration:none;
       position:relative;
       transition:.3s;
@@ -395,7 +426,7 @@
       bottom:-3px;
       width:0%;
       height:1px;
-      background:#7c847a;
+      background:var(--muted);
       transition:.3s;
     }
 
@@ -446,165 +477,21 @@
     <!--
       HOW TO ADD A PHOTO:
       Copy the template located in MCCG.com/gallery
+      Paste it in the designated are marked "ADD PHOTOS UNDER HERE" and "ADD PHOTOS ABOVE HERE"
       Then change the image directionry to your images and also add the personells name.
+      !!!!IF NO OTHER PHOTOS ARE ADDED, DELETE THE EMPTY STATE DIV BELOW. (The one that says "No photos added yet")
       Its easy if you fail it your dum (with all due respect)
     -->
 
-    <div class="gallery-grid">
+    <div class="gallery-grid empty-state">
+      <!-- ADD PHOTOS UNDER HERE -->
 
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
+      <div class="empty-message">
+        <h3>No photos added yet</h3>
+        <p>Gallery content will appear here once images are added.</p>
       </div>
 
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-       <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"> </span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-       <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
-       <div class="glass photo-card" onclick="openLightbox(this)">
-        <div class="photo-image">
-          <img src="../mccg-web-images/" alt="MCCG Photo" data-fallback="../mccg-web-images/placeholder.mp4">
-        </div>
-        <div class="photo-content">
-          <div class="photo-credit">
-            <span class="credit-label">Photo by:</span>
-            <span class="credit-name"></span>
-          </div>
-          <div class="credit-divider"></div>
-          <div class="photo-credit">
-            <span class="credit-label">Edited by:</span>
-            <span class="credit-name"></span>
-          </div>
-        </div>
-      </div>
-
+      <!-- ADD PHOTOS ABOVE HERE -->
     </div>
 
   </section>
