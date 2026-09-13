@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 01:44 UTC",
+  "updated": "2026-09-13 01:52 UTC",
   "members": {
     "SR": [],
     "SA": [],
@@ -17,8 +17,12 @@
     "ENS": [],
     "LTJG": [],
     "LT": [],
-    "LCDR": [],
-    "CDR": [],
+    "LCDR": [
+      "LCDR | DEV | Grg_gamer1 | CG-047"
+    ],
+    "CDR": [
+      "CDR | 3oreo5 | CG-019"
+    ],
     "CAPT": [],
     "RDML": [],
     "RADM": [
