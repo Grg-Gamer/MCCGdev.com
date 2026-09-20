@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13 01:52 UTC",
+  "updated": "2026-09-20 02:10 UTC",
   "members": {
     "SR": [],
     "SA": [],
@@ -25,12 +25,9 @@
     ],
     "CAPT": [],
     "RDML": [],
-    "RADM": [
-      "LOA|RADM | Randa_Kaba22 | CG-081"
-    ],
+    "RADM": [],
     "VADM": [
-      "MG | Youknowmeyoukno | CO-G18",
-      "VADM | honzacipher | CG-001"
+      "MG | Youknowmeyoukno | CO-G18"
     ],
     "ADM": [
       "ADM | Chunkmonster199 | CG-007"
