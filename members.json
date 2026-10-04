@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27 02:20 UTC",
+  "updated": "2026-10-04 03:15 UTC",
   "members": {
     "SR": [],
     "SA": [],
@@ -10,11 +10,21 @@
     "SCPO": [],
     "MCPO": [],
     "CMCPO": [],
-    "MCPCG": [],
-    "CW2": [],
-    "CW3": [],
+    "MCPCG": [
+      "MCPCG | andi111000 | CG-999"
+    ],
+    "CW2": [
+      "CW2 | Matous752 | CG-752"
+    ],
+    "CW3": [
+      "CW3 | 3blackfire | CG-015"
+    ],
     "CW4": [],
-    "ENS": [],
+    "ENS": [
+      "ENS | mosahela346",
+      "ENS | Problemfoxking2 | CG-127",
+      "ENS | VNAKE12345 | CG-347"
+    ],
     "LTJG": [],
     "LT": [],
     "LCDR": [
